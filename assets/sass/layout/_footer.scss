@@ -1,0 +1,100 @@
+@use "../abstracts/mixins" as *;
+
+.footer {
+    background-color: var(--clr-gray-800);
+    color: var(--clr-light);
+    padding-block: clamp(4rem, 8vw, 4rem);
+
+    background: linear-gradient(199.99deg, #26292d 7.59%, #12141e 107.11%);
+    padding-top: 104px;
+    padding-bottom: 104px;
+
+    a {
+        --primary-saturation: 65%;
+        color: var(--clr-gray-400);
+        text-decoration: underline;
+        text-underline-offset: 0.2rem;
+        text-decoration-thickness: 2px;
+        text-decoration-color: transparent;
+        white-space: nowrap;
+
+        transition: color 0.2s ease-in-out, text-decoration-color .2s ease-in-out, text-underline-offset 0.2s ease-in-out;
+
+        &:hover {
+            --primary-saturation: 100%;
+            color: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
+            text-decoration-color: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
+            text-underline-offset: 0.3rem;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        gap: clamp(3rem, 5vw, 6rem);
+        padding-block-end: 1.3rem;
+
+        @include media-query(lg) {
+            flex-direction: row;
+            align-items: flex-end;
+        }
+
+        .brand-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            @include media-query(lg) {
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            a {
+                width: min(160px, 100%);
+            }
+        }
+
+        .footer-menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: clamp(0.8rem, 5vw, 1rem);
+        }
+
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+
+        border-top: 1px solid var(--clr-gray-500);
+
+        padding-block-start: 3rem;
+
+        @include media-query(lg) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+
+        .legal-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .copyright-text {}
+    }
+}

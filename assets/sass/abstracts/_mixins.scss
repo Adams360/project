@@ -1,0 +1,46 @@
+@use "./variables" as *;
+
+// Media Query Mixin
+/**
+ * @mixin media-query
+ * @description A mixin for creating media queries based on breakpoints.
+ * 
+ * @param {string} $breakpoint - The name of the breakpoint.
+ * @param {string} $type - The type of media query. Default value is 'min'.
+ * 
+ * @return {null} - No return value.
+ * 
+ * @example Usage:
+ * 
+ *     @include media-query('tablet') {
+ *         // Styles for tablet breakpoint
+ *     }
+ * 
+ *     @include media-query('desktop', 'max') {
+ *         // Styles for desktop breakpoint and below
+ *     }
+ * 
+ *     @include media-query('invalid-breakpoint') {
+ *         // Warning: The breakpoint 'invalid-breakpoint' does not exist.
+ *     }
+ */
+@mixin media-query($breakpoint, $type: 'min') {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    @if map-has-key($breakpoints, $breakpoint) {
+        @if $type == 'min' {
+            @media (min-width: $breakpoint-value) {
+                @content;
+            }
+        } @else if $type == 'max' {
+            @media (max-width: $breakpoint-value) {
+                @content;
+            }
+        } @else {
+            @warn "Invalid media query type. Please use 'min' or 'max'.";
+        }
+    } @else {
+        @warn "The breakpoint '#{$breakpoint}' does not exist.";
+    }
+}
+

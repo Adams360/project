@@ -1,0 +1,103 @@
+.brands {
+    padding: 6rem 0;
+    background-color: var(--clr-gray-800);
+
+
+    .brands-grid {
+        // grid-template-columns: repeat(4, 1fr);
+        // gap: 2rem;
+
+        &__heading {
+            grid-area: heading;
+        }
+
+        &__arrows {
+            grid-area: arrows;
+        }
+
+        &__reel {
+            grid-area: reel;
+        }
+
+        &__reel-logo {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                display: block;
+                width: 100px;
+                aspect-ratio: 1;
+            }
+        }
+
+        &__display-item {
+            grid-area: display;
+            width: 100%;
+
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: red;
+
+            img {
+                display: block;
+                width: 100px;
+                aspect-ratio: 1;
+            }
+        }
+
+        &__card {
+            grid-area: cards;
+        }
+    }
+
+    button {
+        width: 2.8em;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 1px solid transparent;
+        background-color: var(--clr-gray-100);
+        cursor: pointer;
+
+        font-size: 1.5rem;
+
+        &:hover {
+            background-color: var(--clr-gray-200);
+        }
+    }
+}
+
+.autoplay-progress {
+    --swiper-theme-color: var(--clr-primary);
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--swiper-theme-color);
+}
+
+.autoplay-progress svg {
+    --progress: 0;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    stroke-width: 4px;
+    stroke: var(--swiper-theme-color);
+    fill: none;
+    stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+    stroke-dasharray: 125.6;
+    transform: rotate(-90deg);
+}

@@ -1,0 +1,145 @@
+@use "../abstracts/variables" as vars;
+
+:root {
+    --clr-primary: #{map-get(vars.$colors, 'primary')};
+    --clr-light: #{map-get(vars.$colors, 'light')};
+    --clr-gray-100: #{map-get(vars.$colors, 'gray-100')};
+    --clr-gray-200: #{map-get(vars.$colors, 'gray-200')};
+    --clr-gray-300: #{map-get(vars.$colors, 'gray-300')};
+    --clr-gray-400: #{map-get(vars.$colors, 'gray-400')};
+    --clr-gray-500: #{map-get(vars.$colors, 'gray-500')};
+    --clr-gray-600: #{map-get(vars.$colors, 'gray-600')};
+    --clr-gray-700: #{map-get(vars.$colors, 'gray-700')};
+    --clr-gray-800: #{map-get(vars.$colors, 'gray-800')};
+    --clr-gray-900: #{map-get(vars.$colors, 'gray-900')};
+    --clr-dark: #{map-get(vars.$colors, 'dark')};
+}
+
+/* makes sizing simpler */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* dark mode user-agent-styles */
+/* improves punctuation in supported browsers */
+html {
+    // color-scheme: dark light;
+    hanging-punctuation: first last;
+}
+
+/* min body height */
+body {
+    min-height: 100svh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* Improved heading in supported browsers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.08;
+    max-width: 20ch;
+    text-align: center;
+    margin-inline: auto;
+    color: currentColor;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 5rem;
+        height: 3px;
+        background-color: var(--clr-primary);
+        margin-block: 1rem;
+        margin-inline: auto;
+    }
+}
+
+
+/* improve readability with max-width on paragraphs and lists */
+/* prevent orphans in supported browsers */
+p,
+li {
+    max-width: var(--p-max-width, 50ch);
+    text-wrap: pretty;
+}
+
+p {
+    line-height: 1.3;
+}
+
+small {
+    font-size: 0.875rem;
+}
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+
+    /* smooth scrolling */
+    :has(:target) {
+        scroll-behavior: smooth;
+        scroll-padding-top: 3rem;
+    }
+}
+
+/**
+ * This SCSS code defines the styles for the wrapper element.
+ * The wrapper element has a dynamic width that adjusts based on the available space.
+ * It also includes media queries for different breakpoints to set different maximum widths.
+ *
+ * @class wrapper
+ * @memberof base
+ */
+.wrapper {
+    width: min(100% - 2rem, var(--_max-width, 1200px));
+    margin-inline: auto;
+
+    @each $breakpoint, $value in vars.$breakpoints {
+        @media (min-width: $value) {
+            $max-width: map-get(vars.$wrapper-max-widths, $breakpoint);
+            width: min(100% - 2rem, var(--_max-width, $max-width));
+        }
+    }
+}

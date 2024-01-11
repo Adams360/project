@@ -1,0 +1,25 @@
+.social-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    &__item {
+        transition: color 0.2s ease-in-out, scale 0.4s ease-out;
+    
+        a {
+            font-size: 0;
+        }
+
+        svg {
+            width: 25px;
+            aspect-ratio: 1;
+            fill: currentColor;
+        }
+
+        &:hover {
+            color: var(--clr-primary);
+            scale: 1.07;
+        }
+    }
+}

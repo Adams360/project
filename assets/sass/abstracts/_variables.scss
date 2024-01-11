@@ -1,0 +1,35 @@
+$breakpoints: (
+  'sm': 540px,
+  // Small devices (landscape phones, 576px and up)
+  'md': 720px,
+  // Medium devices (tablets, 768px and up)
+  'lg': 960px,
+  // Large devices (desktops, 992px and up)
+  'xl': 1140px,
+  // Extra large devices (large desktops, 1200px and up)
+  'xxl': 1320px // Extra extra large devices (larger desktops, 1400px and up)
+);
+
+$wrapper-max-widths: (
+  'sm': 540px,
+  'md': 720px,
+  'lg': 960px,
+  'xl': 1140px,
+  'xxl': 1320px
+);
+
+
+$colors: (
+  'primary': #f15025,
+  'light': #f8f9fa,
+  'gray-100': #f8f9fa,
+  'gray-200': #e9ecef,
+  'gray-300': #dee2e6,
+  'gray-400': #ced4da,
+  'gray-500': #adb5bd,
+  'gray-600': #6c757d,
+  'gray-700': #495057,
+  'gray-800': #343a40,
+  'gray-900': #212529,
+  'dark': #212529
+);
