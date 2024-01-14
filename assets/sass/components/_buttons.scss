@@ -1,63 +1,40 @@
+
 .btn {
-    display: inline-block;
-    padding-inline: var(--btn-padding-x, 2rem);
-    padding-block: var(--btn-padding-y, 1rem);
-    font-size: var(--btn-font-size, 1rem);
-    font-weight: var(--btn-font-weight, 500);
-    line-height: var(--btn-line-height, 1.25);
-    text-align: center;
-    text-decoration: none;
-    text-transform: var(--btn-text-transform, uppercase);
-    white-space: nowrap;
-    color: var(--btn-color, --clr-dark);
-    border-radius: var(--btn-border-radius, 0.25rem);
-    background-color: var(--btn-bg, transparent);
-    border: var(--btn-border-width, 1px) solid var(--btn-border-color, transparent);
-    vertical-align: middle;
-    user-select: none;
-    cursor: pointer;
+    padding: 12px 24px;
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(11, 100%, 58%);
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 1;
 
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	span {
+		z-index: 1;
+		position: relative;
+	}
 
-    &--primary {
-        --btn-bg: var(--clr-primary);
-        --btn-color: var(--clr-light);
-        --btn-border-color: var(--clr-primary);
+	&:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 140px;
+		height: 140px;
+		border-radius: 50%;
+		transform: translate3d(-50%,-50%,0) scale3d(0,0,0);
+		transition: opacity .4s cubic-bezier(.19,1,.22,1),transform .75s cubic-bezier(.19,1,.22,1);
+		opacity: 0;
+	}
 
-        &:hover {
-            --primary-lightness: 50%;
-            --btn-bg: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
-        }
-    }
+	&:hover {
+		span {
+			color: var(--clr-dark)
+		}
 
-    &--secondary {
-        --btn-bg: transparent;
-        --btn-border-color: var(--clr-dark);
-
-        &:hover {
-            --btn-bg: var(--clr-gray-600);
-            --btn--border-color: var(--clr-gray-600);
-            --btn-color: var(--clr-light);
-        }
-    }
-
-    &--light {
-        --btn-border-color: var(--clr-light);
-        --btn-color: var(--clr-light);
-    }
-
-    &--lg {
-        --btn-font-size: 1.5rem;
-    }
-
-    &--sm {
-        --btn-padding-y: 0.85em;
-        --btn-font-size: 1em;
-        min-width: 172px;
-    }
-
-
-
-
-
+		&:before {
+			opacity: 1;
+			transition-duration: .85s;
+			transform: translate3d(-50%,-50%,0) scale3d(1.2,1.2,1.2);
+		}
+	}
 }

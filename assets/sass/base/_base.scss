@@ -1,18 +1,24 @@
 @use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as *;
+
 
 :root {
-    --clr-primary: #{map-get(vars.$colors, 'primary')};
-    --clr-light: #{map-get(vars.$colors, 'light')};
-    --clr-gray-100: #{map-get(vars.$colors, 'gray-100')};
-    --clr-gray-200: #{map-get(vars.$colors, 'gray-200')};
-    --clr-gray-300: #{map-get(vars.$colors, 'gray-300')};
-    --clr-gray-400: #{map-get(vars.$colors, 'gray-400')};
-    --clr-gray-500: #{map-get(vars.$colors, 'gray-500')};
-    --clr-gray-600: #{map-get(vars.$colors, 'gray-600')};
-    --clr-gray-700: #{map-get(vars.$colors, 'gray-700')};
-    --clr-gray-800: #{map-get(vars.$colors, 'gray-800')};
-    --clr-gray-900: #{map-get(vars.$colors, 'gray-900')};
-    --clr-dark: #{map-get(vars.$colors, 'dark')};
+    --clr-primary: #ff5029;
+    --clr-dark: #080808;
+    --clr-light: #fcfcfc;
+
+    --clr-gray-100: #f0f0f0;
+    --clr-gray-200: #d8d8d8;
+    --clr-gray-300: hsl(0, 0%, 73%);
+    --clr-gray-400: #898989;
+    --clr-gray-500: #757575;
+    --clr-gray-600: #5a5a5a;
+    --clr-gray-700: #363636;
+    --clr-gray-800: #222222;
+    --clr-gray-900: #171717;
+
+    --swiper-navigation-color: var(--clr-light);
+    --swiper-navigation-size: 44px;
 }
 
 /* makes sizing simpler */
@@ -28,6 +34,7 @@
     margin: 0;
     padding: 0;
     font: inherit;
+
 }
 
 /* dark mode user-agent-styles */
@@ -35,13 +42,27 @@
 html {
     // color-scheme: dark light;
     hanging-punctuation: first last;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+
 }
 
 /* min body height */
 body {
     min-height: 100svh;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration-thickness: 0.07em !important;
+    text-underline-offset: 0.1em !important;
+    text-underline-position: under;
+
+    background-color: var(--clr-gray-200);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Cdefs%3E%3CradialGradient id='a' r='.3' cx='.6' cy='.6'%3E%3Cstop offset='0' stop-color='%23FF5029' stop-opacity='.5'%3E%3Canimate attributeName='stop-color' values='%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029' dur='29s' repeatCount='762'%3E%3C/animate%3E%3C/stop%3E%3Cstop offset='1' stop-color='%23FF5029' stop-opacity='0'%3E%3Canimate attributeName='stop-color' values='%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029' dur='29s' repeatCount='762'%3E%3C/animate%3E%3C/stop%3E%3CanimateTransform attributeName='gradientTransform' type='rotate' values='360 .5 .5%3B0 .5 .5' dur='29s' repeatCount='762' /%3E%3C/radialGradient%3E%3CradialGradient id='b' r='.3' cx='.6' cy='.6'%3E%3Cstop offset='0' stop-color='%23F83509' stop-opacity='.5'%3E%3Canimate attributeName='stop-color' values='%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029' dur='29s' repeatCount='762' begin='0s'%3E%3C/animate%3E%3C/stop%3E%3Cstop offset='1' stop-color='%23F83509' stop-opacity='0'%3E%3Canimate attributeName='stop-color' values='%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029' dur='29s' repeatCount='762' begin='-9.6s'%3E%3C/animate%3E%3C/stop%3E%3CanimateTransform attributeName='gradientTransform' type='rotate' values='360 .5 .5%3B0 .5 .5' dur='29s' repeatCount='762' begin='-19.2s' /%3E%3C/radialGradient%3E%3CradialGradient id='c' r='.3' cx='.6' cy='.6'%3E%3Cstop offset='0' stop-color='%23171717' stop-opacity='.5'%3E%3Canimate attributeName='stop-color' values='%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029' dur='29s' repeatCount='762' begin='-28.799999999999997s'%3E%3C/animate%3E%3C/stop%3E%3Cstop offset='1' stop-color='%23171717' stop-opacity='0'%3E%3Canimate attributeName='stop-color' values='%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029' dur='29s' repeatCount='762' begin='-38.4s'%3E%3C/animate%3E%3C/stop%3E%3CanimateTransform attributeName='gradientTransform' type='rotate' values='360 .5 .5%3B0 .5 .5' dur='29s' repeatCount='762' begin='-48s' /%3E%3C/radialGradient%3E%3CradialGradient id='d' r='.4' cx='.5' cy='.5'%3E%3Cstop offset='0' stop-color='%23F83509' stop-opacity='.5'/%3E%3Cstop offset='1' stop-color='%23F83509' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Cg fill-opacity='0.57'%3E%3Crect fill='url(%23a)' width='100%25' height='100%25' /%3E%3Crect fill='url(%23b)' width='100%25' height='100%25' /%3E%3Crect fill='url(%23c)' width='100%25' height='100%25' /%3E%3Crect fill='url(%23d)' width='100%25' height='100%25' /%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+
 }
 
 /* responsive images/videos */
@@ -77,13 +98,12 @@ h6 {
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: clamp(1.625rem, 3vw, 42px);
     font-weight: 700;
     line-height: 1.08;
     max-width: 20ch;
-    text-align: center;
-    margin-inline: auto;
     color: currentColor;
+    margin: 0 0 1rem;
 
     &::after {
         content: '';
@@ -92,27 +112,34 @@ h2 {
         height: 3px;
         background-color: var(--clr-primary);
         margin-block: 1rem;
-        margin-inline: auto;
     }
 }
 
 
 /* improve readability with max-width on paragraphs and lists */
 /* prevent orphans in supported browsers */
-p,
-li {
+p {
     max-width: var(--p-max-width, 50ch);
     text-wrap: pretty;
 }
 
 p {
-    line-height: 1.3;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.5;
+    font-weight: 400;
 }
 
 small {
     font-size: 0.875rem;
 }
 
+
+.swiper-button-prev,
+.swiper-button-next {
+    width: 60px;
+    aspect-ratio: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
 
 @media (prefers-reduced-motion: no-preference) {
@@ -133,13 +160,14 @@ small {
  * @memberof base
  */
 .wrapper {
-    width: min(100% - 2rem, var(--_max-width, 1200px));
+    width: min(100% - 2rem, var(--wrapper-max-width, 1200px));
     margin-inline: auto;
 
-    @each $breakpoint, $value in vars.$breakpoints {
-        @media (min-width: $value) {
-            $max-width: map-get(vars.$wrapper-max-widths, $breakpoint);
-            width: min(100% - 2rem, var(--_max-width, $max-width));
-        }
+    @include media-query(md) {
+        --wrapper-max-width: 720px;
+    }
+
+    @include media-query(lg) {
+        --wrapper-max-width: 1200px;
     }
 }

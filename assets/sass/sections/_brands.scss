@@ -1,103 +1,221 @@
+@use "../abstracts/mixins" as *;
+
 .brands {
-    padding: 6rem 0;
-    background-color: var(--clr-gray-800);
+    padding: 4rem 0;
+    background-color: var(--clr-gray-100);
 
+    @include media-query(md) {
+        padding: 8rem 0;
+    }
 
-    .brands-grid {
-        // grid-template-columns: repeat(4, 1fr);
-        // gap: 2rem;
+    &__top {
+        text-align: center;
 
-        &__heading {
-            grid-area: heading;
-        }
+        h2 {
 
-        &__arrows {
-            grid-area: arrows;
-        }
-
-        &__reel {
-            grid-area: reel;
-        }
-
-        &__reel-logo {
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            img {
-                display: block;
-                width: 100px;
-                aspect-ratio: 1;
+            &,
+            &::after {
+                margin-inline: auto;
             }
         }
+    }
 
-        &__display-item {
-            grid-area: display;
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+
+        img {
+            display: block;
             width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
 
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    &__grid {
+        display: grid;
+        gap: 2rem 4rem;
+        grid-template-areas:
+            'reel'
+            'content'
+            'display';
 
-            background-color: red;
+        @include media-query(lg) {
+            margin-block-start: 4rem;
+            grid-template-areas:
+                'content reel'
+                'content display';
+            grid-template-columns: 1fr 1fr;
+        }
+    }
 
-            img {
-                display: block;
-                width: 100px;
-                aspect-ratio: 1;
+    &__content {
+        grid-area: content;
+        position: relative;
+        isolation: isolate;
+        text-align: left;
+        background-color: rgba(#212529, .8);
+
+        border-radius: 1rem;
+        padding: 2rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        overflow: hidden;
+
+        &:not(:first-child) {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-image:
+                url('../images/brands/cusco-logo.png');
+            background-position: center;
+            background-repeat: repeat;
+            background-size: 500px;
+            rotate: -9deg;
+
+            filter: blur(4px) opacity(.2);
+        }
+
+        h3 {
+            font-weight: 700;
+            font-size: clamp(1.3rem, 5vw, 1.7rem);
+            color: var(--clr-light);
+        }
+
+        .badges {
+            display: grid;
+            grid-template-columns: repeat(3, max-content);
+            gap: 1rem;
+
+            border-width: 2px 0;
+            border-color: var(--clr-gray-400);
+            border-style: solid;
+
+            .badge {
+                font-size: 0.875rem;
+                line-height: 1.4;
+                color: var(--clr-gray-200);
+                padding: 0.6rem;
+                border-radius: 1rem;
+
+                span {
+                    display: block;
+                    font-weight: 700;
+                    color: var(--clr-gray-100);
+                }
             }
         }
 
-        &__card {
-            grid-area: cards;
+        p {
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            line-height: 1.4;
+            color: var(--clr-light);
+
+        }
+
+        .btn {
+            margin-block-start: 1rem;
+            align-self: start;
         }
     }
 
-    button {
-        width: 2.8em;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        border: 1px solid transparent;
-        background-color: var(--clr-gray-100);
-        cursor: pointer;
+    &__reel {
+        grid-area: reel;
+        display: flex;
 
-        font-size: 1.5rem;
+        .swiper-slide {
+            width: 25%;
+            height: 100%;
+            opacity: 0.4;
+        }
 
-        &:hover {
-            background-color: var(--clr-gray-200);
+        .swiper-slide-thumb-active {
+            opacity: 1;
+        }
+
+
+        .reel-item {
+            text-align: center;
+
+            button {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+                justify-content: space-between;
+                border: 0;
+                background-color: transparent;
+                cursor: pointer;
+
+                @include media-query(md) {}
+
+                &:hover {
+                    img {
+                        border-color: var(--clr-primary);
+                    }
+
+                    span {
+                        scale: 1.05;
+                    }
+                }
+
+                img {
+                    display: block;
+                    width: 100%;
+                    object-fit: scale-down;
+
+                    border: 1px solid transparent;
+                    border-radius: 0.2rem;
+                    transition: border-color .2s ease-in-out, background-color .2s ease-in-out;
+                }
+
+                span {
+                    display: none;
+                    font-size: 1.125rem;
+                    color: var(--clr-gray-600);
+                    font-weight: 700;
+                    transition: scale .2s ease-in-out;
+
+                    @include media-query(md) {
+                        display: block;
+                    }
+
+                }
+            }
+
+        }
+
+    }
+
+    &__display {
+        grid-area: display;
+
+        .display-item {
+            text-align: center;
+
+            img {
+                display: block;
+                object-fit: contain;
+                object-position: bottom;
+            }
         }
     }
-}
 
-.autoplay-progress {
-    --swiper-theme-color: var(--clr-primary);
-    position: absolute;
-    right: 16px;
-    bottom: 16px;
-    z-index: 10;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: var(--swiper-theme-color);
-}
-
-.autoplay-progress svg {
-    --progress: 0;
-    position: absolute;
-    left: 0;
-    top: 0px;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    stroke-width: 4px;
-    stroke: var(--swiper-theme-color);
-    fill: none;
-    stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
-    stroke-dasharray: 125.6;
-    transform: rotate(-90deg);
 }

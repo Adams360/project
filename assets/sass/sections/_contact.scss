@@ -1,0 +1,176 @@
+.contact {
+    padding: 4rem 0;
+    background-color: var(--clr-light);
+
+    &__layout {
+        border-radius: 1rem;
+        background-color: var(--clr-gray-100);
+        display: flex;
+        gap: 4rem;
+        padding: 1.5rem;
+
+    }
+
+    &__col {
+        &--left {
+            border-radius: inherit;
+            flex: 1;
+            padding: 2rem;
+
+            h3 {
+                position: relative;
+                text-transform: capitalize;
+                font-size: clamp(1.75rem, 3vw, 2.75rem);
+                font-weight: 700;
+                line-height: 1.1;
+                
+                margin-block-end: 2rem;
+
+                span {
+                    color: var(--clr-primary);
+                    text-transform: uppercase;
+                    font-weight: 600;
+                }
+            }
+
+            .form {
+                &__fields {
+                    display: grid;
+                    gap: 2rem;
+                    grid-template-columns: auto auto;
+
+                    label {
+                        display: block;
+                        font-size: 0.875rem;
+                        font-weight: 600;
+                        margin-bottom: 0.5rem;
+                        color: var(--clr-gray-700);
+
+                        display: none;
+                    }
+
+                    input,
+                    textarea {
+                        appearance: none;
+                        border-width: 0 0 2px;
+                        border-color: var(--clr-gray-400);
+                        background-color: transparent;
+                        height: 3.5rem;
+                        width: 100%;
+                        padding: 1rem 0;
+                        resize: none;
+
+                        &:focus {
+                            outline: none;
+                            border-color: var(--clr-primary);
+                        }
+                    }
+                }
+
+                &__group {
+                    &--input-1 {
+                        grid-column: 1 / 2;
+                    }
+
+                    &--input-2 {
+                        grid-column: 2 /3;
+
+                    }
+
+                    &--input-3 {
+                        grid-column: 1 / -1;
+                    }
+
+                    &--bottom {
+                        grid-column: 1 / -1;
+
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                    }
+                }
+
+                &__policy {
+                    max-width: 40ch;
+                    color: rgba(2, 2, 30, .7);
+                    font-size: .875rem;
+
+                    a {
+                        color: var(--clr-primary);
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+
+        &--right {
+            background-color: var(--clr-gray-200);
+            border-radius: 0.5rem;
+            width: 25.25rem;
+            overflow: hidden;
+
+            .testimonials {
+                --_spacer: 2rem;
+
+                &__top {
+                    display: flex;
+                    gap: 0.75rem;
+                    border-bottom: 1px solid var(--clr-gray-300);
+                    padding-block: var(--_spacer);
+                    margin-inline: var(--_spacer);
+                    font-size: 1.75rem;
+                    font-weight: 500;
+                    line-height: 1.2;
+
+                    svg {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+
+                &__carousel {}
+
+                .quote-card {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    min-height: 300px;
+                    color: var(--clr-gray-800);
+
+                    padding-inline: var(--_spacer);
+                    padding-block: var(--_spacer);
+
+                    &__text {}
+
+                    &__author {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+
+                        p {
+                            font-weight: 600;
+                            font-size: 0.875rem;
+
+                            span {
+                                display: block;
+                                font-weight: 400;
+                                color: var(--clr-gray-700);
+                            }
+                        }
+
+                        img {
+                            display: block;
+                            width: 56px;
+                            height: 56px;
+                            object-fit: contain;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,103 @@
+.features {
+    padding: 9rem 0;
+    background-color: var(--clr-gray-800);
+
+
+    &__top {
+        margin-block-end: 5rem;
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            color: var(--clr-light);
+
+            &::after {
+                margin-inline: auto;
+            }
+        }
+
+        p {
+            color: var(--clr-gray-300);
+            font-size: 1.125rem;
+        }
+    }
+
+    &__layout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 1rem;
+    }
+
+    .feature-card {
+        display: flex;
+        flex-direction: column;
+        gap: 2.15rem;
+        align-items: start;
+
+        padding: 1.5rem 1.5rem 3.5rem;
+        background-color: var(--clr-gray-900);
+        -webkit-backdrop-filter: blur(18px);
+        backdrop-filter: blur(18px);
+        border: 1px solid rgba(127, 123, 140, 0.3);
+        border-radius: 0.5rem;
+
+        transition: border-color 0.2s ease-in-out, scale 0.4s ease-out;
+
+        &:hover {
+            border-color: var(--clr-primary);
+            scale: 1.03;
+
+            .feature-card__icon {
+                scale: 1.06;
+            }
+
+        }
+
+        &__icon {
+            flex-shrink: 0;
+            width: 2.5rem;
+            aspect-ratio: 1;
+            color: var(--clr-primary);
+
+            transition: scale 0.2s ease-in;
+
+
+            svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        &__content {
+            h3 {
+                font-size: clamp(1.1rem, 3.6vw, 1.5rem);
+                line-height: 1.3;
+                font-weight: 700;
+                letter-spacing: 0.5008px;
+                color: var(--clr-light);
+                margin: 0 0 1rem;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 2rem;
+                    height: 3px;
+                    background-color: var(--clr-primary);
+                    margin-block: 0.5rem;
+                }
+            }
+
+            p {
+                font-size: clamp(0.9rem, 3.6vw, 1rem);
+                color: var(--clr-gray-200);
+            }
+        }
+    }
+
+
+}
