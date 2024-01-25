@@ -1,14 +1,20 @@
+@use "../abstracts/mixins" as *;
+
 .contact {
     padding: 4rem 0;
-    background-color: var(--clr-light);
+    background-color: var(--gray-3);
 
     &__layout {
-        border-radius: 1rem;
-        background-color: var(--clr-gray-100);
         display: flex;
+        flex-direction: column-reverse;
         gap: 4rem;
+        border-radius: 1rem;
+        background-color: var(--gray-1);
         padding: 1.5rem;
 
+        @include media-query(lg) {
+            flex-direction: row;
+        }
     }
 
     &__col {
@@ -19,25 +25,18 @@
 
             h3 {
                 position: relative;
-                text-transform: capitalize;
-                font-size: clamp(1.75rem, 3vw, 2.75rem);
-                font-weight: 700;
-                line-height: 1.1;
-                
-                margin-block-end: 2rem;
-
-                span {
-                    color: var(--clr-primary);
-                    text-transform: uppercase;
-                    font-weight: 600;
-                }
+                font-size: var(--font-size-fluid-2);
             }
 
             .form {
                 &__fields {
                     display: grid;
                     gap: 2rem;
-                    grid-template-columns: auto auto;
+
+                    @include media-query(md) {
+                        grid-template-columns: auto auto;
+
+                    }
 
                     label {
                         display: block;
@@ -68,36 +67,55 @@
                 }
 
                 &__group {
+                    max-inline-size: 100%;
+
                     &--input-1 {
-                        grid-column: 1 / 2;
+                        @include media-query(md) {
+                            grid-column: 1 / 2;
+                        }
                     }
 
                     &--input-2 {
-                        grid-column: 2 /3;
+                        @include media-query(md) {
+                            grid-column: 2 /3;
+                        }
 
                     }
 
                     &--input-3 {
-                        grid-column: 1 / -1;
+                        textarea {
+                            height: 4rem;
+                        }
+                        @include media-query(md) {
+                            grid-column: 1 / -1;
+                            textarea {
+                                height: 8rem;
+                            }
+                        }
                     }
 
                     &--bottom {
                         grid-column: 1 / -1;
-
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
+                        flex-direction: column;
+                        gap: 1rem;
+
+                        @include media-query(md) {
+                            flex-direction: row;
+                        }
 
                     }
                 }
 
                 &__policy {
-                    max-width: 40ch;
                     color: rgba(2, 2, 30, .7);
-                    font-size: .875rem;
+                    font-size: var(--font-size-00);
 
                     a {
                         color: var(--clr-primary);
+
                         &:hover {
                             text-decoration: underline;
                         }
@@ -111,6 +129,8 @@
             border-radius: 0.5rem;
             width: 25.25rem;
             overflow: hidden;
+            width: min(25.25rem, 100%);
+            margin-inline: auto;
 
             .testimonials {
                 --_spacer: 2rem;
@@ -124,6 +144,10 @@
                     font-size: 1.75rem;
                     font-weight: 500;
                     line-height: 1.2;
+
+                    h3 {
+                        font-size: var(--font-size-fluid-1);
+                    }
 
                     svg {
                         width: 30px;

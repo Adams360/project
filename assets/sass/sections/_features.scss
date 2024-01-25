@@ -1,35 +1,38 @@
 .features {
-    padding: 9rem 0;
-    background-color: var(--clr-gray-800);
+    padding-block: var(--size-fluid-5);
+    background-color: var(--gray-3);
 
+        &__top {
+            margin-block-end: 4rem;
+            text-align: center;
 
-    &__top {
-        margin-block-end: 5rem;
-        text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+            h2 {
+                padding-block-end: 1rem;
 
-        h2 {
-            color: var(--clr-light);
+                span {
+                    display: block;
+                }
 
-            &::after {
-                margin-inline: auto;
+                &::after {
+                    margin-inline: auto;
+                }
+            }
+
+            p {
+                color: var(--gray-10);
+                font-size: 1rem;
             }
         }
 
-        p {
-            color: var(--clr-gray-300);
-            font-size: 1.125rem;
+        &__layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1rem;
         }
-    }
-
-    &__layout {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 1rem;
-    }
 
     .feature-card {
         display: flex;
@@ -38,9 +41,7 @@
         align-items: start;
 
         padding: 1.5rem 1.5rem 3.5rem;
-        background-color: var(--clr-gray-900);
-        -webkit-backdrop-filter: blur(18px);
-        backdrop-filter: blur(18px);
+        background-image: var(--gradient-8);
         border: 1px solid rgba(127, 123, 140, 0.3);
         border-radius: 0.5rem;
 
@@ -60,7 +61,7 @@
             flex-shrink: 0;
             width: 2.5rem;
             aspect-ratio: 1;
-            color: var(--clr-primary);
+            color: var(--brand-1);
 
             transition: scale 0.2s ease-in;
 
@@ -79,7 +80,8 @@
                 line-height: 1.3;
                 font-weight: 700;
                 letter-spacing: 0.5008px;
-                color: var(--clr-light);
+                color: var(--gray-0);
+
                 margin: 0 0 1rem;
 
                 &::after {
@@ -87,14 +89,14 @@
                     display: block;
                     width: 2rem;
                     height: 3px;
-                    background-color: var(--clr-primary);
+                    background-color: var(--brand-1);
                     margin-block: 0.5rem;
                 }
             }
 
             p {
                 font-size: clamp(0.9rem, 3.6vw, 1rem);
-                color: var(--clr-gray-200);
+                color: var(--gray-4);
             }
         }
     }

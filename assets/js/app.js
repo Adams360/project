@@ -48,18 +48,22 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 
   var brandsReelSwiper = new Swiper('.brandsReelSwiper', {
-    loop: true,
+    // loop: true,
     // spaceBetween: 10,
-    slidesPerView: 3,
+    slidesPerView: 2,
+    spaceBeetween: 30,
     // freeMode: true,
-    watchSlidesProgress: true,
-    grabCursor: true,
+    // freeMode: true,
+    // grabCursor: true,
+    // centerSlides: true,
+    // centered: true,
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
 
     thumbs: {
       swiper: brandsDisplaySwiper,
-    },
-    mousewheel: {
-      invert: true,
     },
   })
 

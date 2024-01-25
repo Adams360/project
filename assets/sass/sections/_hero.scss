@@ -1,38 +1,43 @@
 .hero {
-    padding: 7rem 0;
-    background-color: var(--clr-gray-100);
-    background-image:
-        linear-gradient(-35deg, var(--clr-gray-100), transparent),
-        url('../images/hero-img.png');
-    background-position: bottom right;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: var(--orange-1);
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
 
-    
+    background-image: url('../images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 500px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        right: 244px;
+        max-width: 800px;
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/hero-img.png');
+        background-size: contain;
+        background-position: bottom right;
+        background-repeat: no-repeat;
+    }
+
+    &__inner {
+        display: flex;
+    }
 
     &__content {
+        padding-block: 10rem;
+
         h1 {
-            font-size: clamp(3rem, 5vw, 5rem);
-            font-weight: 800;
-            line-height: 1.08;
-            color: var(--clr-gray-900);
-            max-width: 20ch;
-
-
-            span {
-                display: block;
-                font-weight: 900;
-                color: var(--clr-primary);
-            }
+            font-size: var(--font-size-fluid-3);
+            width: min(100%, 15ch);
+            color: var(--gray-12);
+            font-weight: 500;
+            line-height: var(--font-lineheight-0);
+            margin: 0 0 1.5rem;
         }
-
-        p {
-            font-size: 1.5rem;
-            max-width: 25ch;
-            margin-block: 1rem 2.4rem;
-            color: var(--clr-dark);
-        }
-
     }
 }

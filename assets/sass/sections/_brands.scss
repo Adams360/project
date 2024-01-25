@@ -1,23 +1,14 @@
 @use "../abstracts/mixins" as *;
 
 .brands {
-    padding: 4rem 0;
-    background-color: var(--clr-gray-100);
-
-    @include media-query(md) {
-        padding: 8rem 0;
-    }
+    padding-block: var(--size-fluid-5);
+    background-color: var(--gray-1);
 
     &__top {
         text-align: center;
-
-        h2 {
-
-            &,
-            &::after {
-                margin-inline: auto;
-            }
-        }
+        display: flex;
+        justify-content: center;
+        margin-block-end: 3rem;
     }
 
     .swiper {
@@ -26,16 +17,8 @@
     }
 
     .swiper-slide {
-        text-align: center;
         display: flex;
         justify-content: center;
-
-        img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
     }
 
     &__grid {
@@ -47,10 +30,12 @@
             'display';
 
         @include media-query(lg) {
-            margin-block-start: 4rem;
+            margin-block-start: var(--size-9);
             grid-template-areas:
-                'content reel'
+                'reel reel'
+                'content display'
                 'content display';
+
             grid-template-columns: 1fr 1fr;
         }
     }
@@ -60,7 +45,6 @@
         position: relative;
         isolation: isolate;
         text-align: left;
-        background-color: rgba(#212529, .8);
 
         border-radius: 1rem;
         padding: 2rem;
@@ -96,7 +80,6 @@
         h3 {
             font-weight: 700;
             font-size: clamp(1.3rem, 5vw, 1.7rem);
-            color: var(--clr-light);
         }
 
         .badges {
@@ -104,21 +87,21 @@
             grid-template-columns: repeat(3, max-content);
             gap: 1rem;
 
-            border-width: 2px 0;
-            border-color: var(--clr-gray-400);
+            border-width: 1px 0;
+            border-color: var(--gray-4);
             border-style: solid;
 
             .badge {
                 font-size: 0.875rem;
                 line-height: 1.4;
-                color: var(--clr-gray-200);
+                color: var(--gray-9);
                 padding: 0.6rem;
                 border-radius: 1rem;
 
                 span {
                     display: block;
                     font-weight: 700;
-                    color: var(--clr-gray-100);
+                    color: var(--gray-12);
                 }
             }
         }
@@ -126,7 +109,7 @@
         p {
             font-size: clamp(1rem, 2vw, 1.125rem);
             line-height: 1.4;
-            color: var(--clr-light);
+            color: var(--gray-9);
 
         }
 
@@ -138,68 +121,89 @@
 
     &__reel {
         grid-area: reel;
-        display: flex;
-
-        .swiper-slide {
-            width: 25%;
-            height: 100%;
-            opacity: 0.4;
+        .swiper-wrapper {
+            justify-content: center;
+            align-items: center;
         }
-
-        .swiper-slide-thumb-active {
-            opacity: 1;
-        }
-
 
         .reel-item {
             text-align: center;
+            padding-inline: 10px;
+            max-width: 300px;
 
-            button {
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-                align-items: center;
-                justify-content: space-between;
-                border: 0;
-                background-color: transparent;
-                cursor: pointer;
+            // &.is-upcoming {
+            //     position: relative;
 
-                @include media-query(md) {}
+            //     button {
+            //         pointer-events: none;
+            //     }
 
-                &:hover {
+            //     &::before,
+            //     &::after {
+            //         position: absolute;
+            //         border-radius: 5px;
+
+            //     }
+
+            //     &::before {
+            //         content: '';
+            //         position: absolute;
+            //         z-index: -10;
+            //         top: 1.6em;
+            //         right: -0.7em;
+            //         height: 28px;
+            //         width: 28px;
+            //         background-color: var(--gray-4);
+            //         transform: rotate(45deg);
+            //     }
+
+            //     &::after {
+            //         content: 'Coming Soon';
+            //         position: absolute;
+            //         top: 0.3em;
+            //         right: -1em;
+            //         padding: 0.7em;
+            //         line-height: 1em;
+            //         width: 9em;
+            //         background-color: var(--gray-2);
+            //         color: var(--gray-12);
+            //         box-shadow: var(--shadow-1)
+            //     }
+
+            //     button {
+            //         filter: blur(2px);
+            //         opacity: 0.7;
+
+            //     }
+            // }
+
+
+            &.swiper-slide {
+                button {
+                    background-color: transparent;
+                    --_highlight: none;
+                    opacity: 0.8;
+
                     img {
-                        border-color: var(--clr-primary);
-                    }
-
-                    span {
-                        scale: 1.05;
-                    }
-                }
-
-                img {
-                    display: block;
-                    width: 100%;
-                    object-fit: scale-down;
-
-                    border: 1px solid transparent;
-                    border-radius: 0.2rem;
-                    transition: border-color .2s ease-in-out, background-color .2s ease-in-out;
-                }
-
-                span {
-                    display: none;
-                    font-size: 1.125rem;
-                    color: var(--clr-gray-600);
-                    font-weight: 700;
-                    transition: scale .2s ease-in-out;
-
-                    @include media-query(md) {
                         display: block;
+                        object-fit: contain;
+                        scale: 0.7;
+                        transition: scale 0.4s var(--ease-bounce-2);
                     }
-
                 }
-            }
 
+                &-thumb-active {
+                    button {
+                        border-color: var(--brand-1);
+                        opacity: 1;
+
+                        img {
+                            scale: 1.1;
+                        }
+                    }
+                }
+
+            }
         }
 
     }
@@ -209,6 +213,15 @@
 
         .display-item {
             text-align: center;
+
+
+            &.swiper-slide-active {
+                opacity: 1;
+                animation: var(--animation-slide-in-up);
+                animation-duration: 1s;
+
+            }
+
 
             img {
                 display: block;

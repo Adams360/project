@@ -1,171 +1,38 @@
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins" as *;
 
-
 :root {
-    --clr-primary: #ff5029;
-    --clr-dark: #080808;
+    --brand-1: #ff5029;
+    --brand-2: #FE6D4E;
+    --clr-dark-1: #333333;
+    --clr-dark-2: #676767;
     --clr-light: #fcfcfc;
-
-    --clr-gray-100: #f0f0f0;
-    --clr-gray-200: #d8d8d8;
-    --clr-gray-300: hsl(0, 0%, 73%);
-    --clr-gray-400: #898989;
-    --clr-gray-500: #757575;
-    --clr-gray-600: #5a5a5a;
-    --clr-gray-700: #363636;
-    --clr-gray-800: #222222;
-    --clr-gray-900: #171717;
-
-    --swiper-navigation-color: var(--clr-light);
-    --swiper-navigation-size: 44px;
 }
 
-/* makes sizing simpler */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-/* remove default spacing */
-/* force styling of type through styling, rather than elements */
-* {
-    margin: 0;
-    padding: 0;
-    font: inherit;
-
-}
-
-/* dark mode user-agent-styles */
-/* improves punctuation in supported browsers */
 html {
-    // color-scheme: dark light;
-    hanging-punctuation: first last;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
-
+    scroll-padding-top: 2rem;
 }
 
-/* min body height */
 body {
+    position: relative;
     min-height: 100svh;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-decoration-thickness: 0.07em !important;
-    text-underline-offset: 0.1em !important;
-    text-underline-position: under;
-
-    background-color: var(--clr-gray-200);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Cdefs%3E%3CradialGradient id='a' r='.3' cx='.6' cy='.6'%3E%3Cstop offset='0' stop-color='%23FF5029' stop-opacity='.5'%3E%3Canimate attributeName='stop-color' values='%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029' dur='29s' repeatCount='762'%3E%3C/animate%3E%3C/stop%3E%3Cstop offset='1' stop-color='%23FF5029' stop-opacity='0'%3E%3Canimate attributeName='stop-color' values='%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029' dur='29s' repeatCount='762'%3E%3C/animate%3E%3C/stop%3E%3CanimateTransform attributeName='gradientTransform' type='rotate' values='360 .5 .5%3B0 .5 .5' dur='29s' repeatCount='762' /%3E%3C/radialGradient%3E%3CradialGradient id='b' r='.3' cx='.6' cy='.6'%3E%3Cstop offset='0' stop-color='%23F83509' stop-opacity='.5'%3E%3Canimate attributeName='stop-color' values='%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029' dur='29s' repeatCount='762' begin='0s'%3E%3C/animate%3E%3C/stop%3E%3Cstop offset='1' stop-color='%23F83509' stop-opacity='0'%3E%3Canimate attributeName='stop-color' values='%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029' dur='29s' repeatCount='762' begin='-9.6s'%3E%3C/animate%3E%3C/stop%3E%3CanimateTransform attributeName='gradientTransform' type='rotate' values='360 .5 .5%3B0 .5 .5' dur='29s' repeatCount='762' begin='-19.2s' /%3E%3C/radialGradient%3E%3CradialGradient id='c' r='.3' cx='.6' cy='.6'%3E%3Cstop offset='0' stop-color='%23171717' stop-opacity='.5'%3E%3Canimate attributeName='stop-color' values='%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029' dur='29s' repeatCount='762' begin='-28.799999999999997s'%3E%3C/animate%3E%3C/stop%3E%3Cstop offset='1' stop-color='%23171717' stop-opacity='0'%3E%3Canimate attributeName='stop-color' values='%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029%3B%23F83509%3B%23171717%3B%23F83509%3B%23FF5029' dur='29s' repeatCount='762' begin='-38.4s'%3E%3C/animate%3E%3C/stop%3E%3CanimateTransform attributeName='gradientTransform' type='rotate' values='360 .5 .5%3B0 .5 .5' dur='29s' repeatCount='762' begin='-48s' /%3E%3C/radialGradient%3E%3CradialGradient id='d' r='.4' cx='.5' cy='.5'%3E%3Cstop offset='0' stop-color='%23F83509' stop-opacity='.5'/%3E%3Cstop offset='1' stop-color='%23F83509' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Cg fill-opacity='0.57'%3E%3Crect fill='url(%23a)' width='100%25' height='100%25' /%3E%3Crect fill='url(%23b)' width='100%25' height='100%25' /%3E%3Crect fill='url(%23c)' width='100%25' height='100%25' /%3E%3Crect fill='url(%23d)' width='100%25' height='100%25' /%3E%3C/g%3E%3C/svg%3E");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: contain;
-
-
+    -webkit-text-size-adjust: none;
+    background-color: var(--gray-12);
 }
 
-/* responsive images/videos */
-img,
-picture,
-svg,
-video {
-    display: block;
-    max-width: 100%;
-}
-
+// Tyography
 ul,
 ol {
     list-style: none;
+    padding: 0;
 }
 
-a {
-    display: inline-block;
-    color: inherit;
-    text-decoration: none;
-}
-
-
-/* Improved heading in supported browsers */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    text-wrap: balance;
-    text-transform: uppercase;
-}
-
-h2 {
-    font-size: clamp(1.625rem, 3vw, 42px);
-    font-weight: 700;
-    line-height: 1.08;
-    max-width: 20ch;
-    color: currentColor;
-    margin: 0 0 1rem;
-
-    &::after {
-        content: '';
-        display: block;
-        width: 5rem;
-        height: 3px;
-        background-color: var(--clr-primary);
-        margin-block: 1rem;
-    }
-}
-
-
-/* improve readability with max-width on paragraphs and lists */
-/* prevent orphans in supported browsers */
-p {
-    max-width: var(--p-max-width, 50ch);
-    text-wrap: pretty;
-}
-
-p {
-    font-size: clamp(1rem, 2vw, 1.125rem);
-    line-height: 1.5;
-    font-weight: 400;
-}
-
-small {
-    font-size: 0.875rem;
-}
-
-
-.swiper-button-prev,
-.swiper-button-next {
-    width: 60px;
-    aspect-ratio: 1;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-
-@media (prefers-reduced-motion: no-preference) {
-
-    /* smooth scrolling */
-    :has(:target) {
-        scroll-behavior: smooth;
-        scroll-padding-top: 3rem;
-    }
-}
-
-/**
- * This SCSS code defines the styles for the wrapper element.
- * The wrapper element has a dynamic width that adjusts based on the available space.
- * It also includes media queries for different breakpoints to set different maximum widths.
- *
- * @class wrapper
- * @memberof base
- */
 .wrapper {
     width: min(100% - 2rem, var(--wrapper-max-width, 1200px));
     margin-inline: auto;
-
-    @include media-query(md) {
-        --wrapper-max-width: 720px;
-    }
 
     @include media-query(lg) {
         --wrapper-max-width: 1200px;

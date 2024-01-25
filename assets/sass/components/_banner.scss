@@ -1,0 +1,198 @@
+@use "../abstracts/mixins" as *;
+
+
+
+.banner {
+    padding: 4rem;
+    background-color: var(--red-1);
+    border-radius: 10px;
+    display: flex;
+
+    max-width: 920px;
+    margin: 4rem auto;
+
+    &__inner {
+        width: fit-content;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            'badge badge'
+            'title title'
+            'date location'
+            'cta cta';
+    }
+
+    .badge {
+        grid-area: badge;
+        border: 1px solid var(--red-5);
+        color: var(--gray-12);
+        padding: 8px 12px;
+        border-radius: 100px;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        font-size: 14px;
+        background-color: var(--red-0);
+        width: fit-content;
+
+
+    }
+
+    &__title {
+        grid-area: title;
+        color: var(--stone-11);
+        font-size: var(--font-size-6);
+    }
+
+    &__details {
+        dt {
+            font-size: var(--font-size-1);
+        }
+
+        dd {
+            font-size: var(--font-size-4);
+        }
+
+        &--date {
+            grid-area: date;
+            color: var(--stone-12)
+        }
+
+        &--location {
+            grid-area: location;
+            color: var(--stone-12)
+        }
+    }
+
+    &__btn {
+        grid-area: cta;
+
+        background-color: var(--stone-11);
+        color: var(--gray-0);
+        font-size: var(--font-size-4);
+        font-weight: 700;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        padding: 0.6rem;
+        border-radius: 1.8rem;
+        margin-block-start: 0.5rem;
+        text-decoration: none;
+
+        &:hover {
+            background-color: var(--stone-10);
+            svg {
+            animation: var(--animation-shake-y);
+
+            }
+        }
+
+        svg {
+            fill: currentColor;
+            width: 23px;
+            height: 30px;
+
+        }
+    }
+}
+
+
+// .banner {
+//     position: sticky;
+//     right: 0;
+//     bottom: 0;
+//     background-color: var(--gray-12);
+//     padding: 1rem;
+
+//     &__inner {
+//         display: flex;
+//         gap: 1rem;
+//         flex-direction: column;
+
+//         @include media-query(lg, max) {
+//             flex-direction: column;
+//             align-items: center;
+//         }
+//     }
+
+//     &__content {
+//         display: flex;
+//         justify-content: center;
+//         border-radius: 20px;
+//         border: 1px solid var(--gray-1);
+
+//         flex-direction: column;
+
+//         @include media-query(lg, max) {
+//             flex-direction: column;
+//         }
+
+//     }
+
+
+//     &__details {
+
+//         display: flex;
+//         justify-content: center;
+//         flex-direction: column;
+//         padding-inline: 3ch;
+
+
+//         dt {
+//             font-size: 1rem;
+//             color: var(--gray-1);
+//         }
+
+//         dd {
+//             font-size: 1.875rem;
+//             color: var(--gray-3);
+//         }
+
+//         &--1 {}
+
+//         &--2 {
+//             border-width: 0 1px;
+//             border-color: hsl(var(--gray-0-hsl) / 60%);
+//         }
+
+//         &--3 {}
+//     }
+
+//     &__btn {
+
+//         display: flex;
+//         align-items: center;
+//         gap: 2rem;
+//         border-radius: 20px;
+//         color: var(--gray-0);
+//         background-color: var(--brand-1);
+
+//         font-size: 35px;
+//         font-weight: 600;
+//         width: fit-content;
+//         padding: 21px 70px;
+//         min-width: 438px;
+//         text-decoration: none;
+
+//         transition: background-color 0.3s var(--ease-2);
+
+//         &:hover {
+//             background-color: var(--brand-2);
+
+//             svg {
+//                 animation:
+//                     var(--animation-shake-y);
+//             }
+//         }
+
+//         svg {
+//             width: 3.5rem;
+//             height: 3.5rem;
+//             fill: currentColor;
+//         }
+//     }
+// }

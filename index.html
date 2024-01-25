@@ -9,6 +9,8 @@
 </head>
 
 <body>
+
+
   <!-- Navbar Layout -->
   <nav class="navbar" data-navbar>
     <div class="wrapper">
@@ -23,24 +25,20 @@
 
         <!-- Menu links -->
         <ul id="primary-navigation" class="navbar__menu" data-visible="false">
-          <li><a href="#brands" class="navbar__link navbar__link--is-active">Brands</a></li>
-          <li><a href="#features" class="navbar__link">Features</a></li>
-          <li><a href="#highlights" class="navbar__link">Highlights</a></li>
-          <li><a href="#faq" class="navbar__link">FAQ</a></li>
-          <li><a href="#testimonials" class="navbar__link">Testimonials</a></li>
-          <li><a href="#contact" class="navbar__link">Contact</a></li>
-          <li>
-            <a href="#login" class="btn btn--light btn--sm">Login</a>
-          </li>
+          <li><a href="#brands-section" class="navbar__link navbar__link--is-active">Brands</a></li>
+          <li><a href="#features-section" class="navbar__link">Features</a></li>
+          <li><a href="#highlights-section" class="navbar__link">Highlights</a></li>
+          <li><a href="#faq-section" class="navbar__link">FAQ</a></li>
+          <li><a href="#contact-section" class="navbar__link">Contact</a></li>
         </ul>
 
         <!-- CTAS -->
         <ul class="navbar__ctas">
           <li>
-            <a href="#register" class="btn btn--primary btn--sm">Get Started</a>
+            <a href="#login" class="btn btn--secondary btn--sm">Log in</a>
           </li>
           <li>
-            <a href="#login" class="btn btn--secondary btn--sm">Login</a>
+            <a href="#register" class="btn btn--primary btn--sm">Get Started</a>
           </li>
         </ul>
 
@@ -61,24 +59,26 @@
       </div>
     </div>
   </nav>
+
   <!-- Hero Section -->
   <header class="hero">
     <div class="wrapper">
-      <div class="hero__content">
-        <h1><span>Unlock</span> Your Financial Potential</h1>
-        <p>Join our affiliate program and start earning passive income today.</p>
-        <a href="#" class="custom-btn">Get Started</a>
+      <div class="hero__inner">
+        <!-- Content -->
+        <div class="hero__content">
+          <h1>Lorem ipsum dolor sit.</h1>
+          <a href="#" class="btn btn--primary btn--lg">Join Us</a>
+        </div>
       </div>
     </div>
   </header>
 
-
   <!-- BRANDS Section -->
-  <section class="brands" style="--brands-count: 5">
+  <section class="brands" style="--brands-count: 5" id="brands-section">
     <div class="wrapper">
 
       <div class="brands__top">
-        <h2>Our Brands</h2>
+        <h2>Our <span>Brands<span></h2>
       </div>
 
       <!-- Grid -->
@@ -140,7 +140,7 @@
             features, and a commitment to user satisfaction, we provide players with top-notch entertainment while
             delivering lucrative opportunities for affiliates through our robust affiliate program.
           </p>
-          <button class="btn btn--primary btn--sm">Learn More</button>
+          <button class="btn btn--primary">Learn More</button>
         </div>
 
         <!-- Content -->
@@ -250,24 +250,24 @@
             </div>
 
             <!-- Reel item -->
-            <div class="reel-item swiper-slide">
-              <button type="button">
+            <!-- <div class="reel-item swiper-slide is-upcoming">
+              <button type="button is-disabled">
                 <img src="./assets/images/brands/brand-logo-3.svg" alt="N1 Casino">
-              </button>
-            </div>
+              </button> -->
             <!-- Reel item -->
-            <div class="reel-item swiper-slide">
+            <!-- <div class="reel-item swiper-slide">
               <button type="button">
                 <img src="./assets/images/brands/brand-logo-4.svg" alt="N1 Casino">
               </button>
-            </div>
+            </div> -->
             <!-- Reel item -->
-            <div class="reel-item swiper-slide">
+            <!-- <div class="reel-item swiper-slide">
               <button type="button">
                 <img src="./assets/images/brands/brand-logo-5.svg" alt="N1 Casino">
               </button>
-            </div>
+            </div> -->
           </div>
+          <div class="swiper-scrollbar"></div>
         </div>
 
         <!-- Display -->
@@ -283,17 +283,17 @@
               <img src="./assets/images/brands/brand-display-2.png" alt="">
             </div>
             <!-- Display item -->
-            <div class="display-item swiper-slide">
+            <!-- <div class="display-item swiper-slide">
               <img src="./assets/images/brands/brand-display-3.png" alt="">
-            </div>
+            </div> -->
             <!-- Display item -->
-            <div class="display-item swiper-slide">
+            <!-- <div class="display-item swiper-slide">
               <img src="./assets/images/brands/brand-display-4.png" alt="">
-            </div>
+            </div> -->
             <!-- Display item -->
-            <div class="display-item swiper-slide">
+            <!-- <div class="display-item swiper-slide">
               <img src="./assets/images/brands/brand-display-5.png" alt="">
-            </div>
+            </div> -->
 
           </div>
           <!-- Arrows -->
@@ -307,12 +307,11 @@
     </div>
   </section>
 
-
   <!-- FEATURES Section -->
-  <section class="features">
+  <section class="features" id="features-section">
     <div class="wrapper">
       <div class="features__top">
-        <h2>Why Silver Partners</h2>
+        <h2><span>Why</span> Silver Partners</h2>
         <p>
           Silver Partners is your beacon of excellence, providing innovative and quality services that forge lasting
           partnerships based on trust and a shared vision for success. Explore our platform for a seamless online
@@ -441,65 +440,79 @@
 
 
   <!-- HIGHLIGHTS Section -->
-  <section class="highlights">
+  <section class="highlights" id="highlights-section">
     <div class="wrapper">
-      <div class="highlights__top">
-        <h3>Commisions & Payments</h3>
-        <p>Dynamic commissions tied to performance growth, with earnings based on monthly new depositing players.</p>
+      <div class="highlights__inner">
+
+        <!-- Content -->
+        <div class="highlights__content">
+          <h2>Commisions <span>&</span> Payments</h2>
+          <p>Dynamic commissions tied to performance growth, with earnings based on monthly new depositing players.</p>
+          <div class="highlights__cta">
+            <a href="#" class="btn btn--primary">Become a Partner</a>
+          </div>
+        </div>
+
+        <!-- Layout -->
+        <div class="highlights__layout">
+          <!-- Card item -->
+          <div class="highlight-card">
+            <h4 class="highlight-card__title">revenue share</h4>
+            <ul class="highlight-card__list">
+              <li>
+                Up to <strong>60%</strong>
+              </li>
+            </ul>
+            <p class="highlight-card__comment">lifetime revenue no hidden fees.</p>
+          </div>
+
+          <!-- Card item -->
+          <div class="highlight-card">
+            <h4 class="highlight-card__title">CPA</h4>
+            <ul class="highlight-card__list">
+              <li>
+                Up to <strong>500€</strong>
+              </li>
+            </ul>
+            <p class="highlight-card__comment">lifetime revenue no hidden fees.</p>
+          </div>
+
+          <!-- Card item -->
+          <div class="highlight-card">
+            <h4 class="highlight-card__title">hybrid</h4>
+            <ul class="highlight-card__list">
+              <li>
+                more than<strong>€100</strong>
+              </li>
+              <li>
+                <strong>40%</strong>RS
+              </li>
+            </ul>
+            <p class="highlight-card__comment">lifetime revenue no hidden fees.</p>
+          </div>
+
+          <!-- Card item -->
+          <div class="highlight-card">
+            <h4 class="highlight-card__title">sub-affiliate</h4>
+            <ul class="highlight-card__list">
+              <li>
+                more than <strong>5%</strong>
+              </li>
+            </ul>
+            <p class="highlight-card__comment">lifetime revenue no hidden fees.</p>
+          </div>
+
+        </div>
       </div>
 
-      <div class="highlights__layout">
+      <!-- CTA -->
 
-        <!-- Card item -->
-        <div class="highlight-card">
-          <dl class="highlight-card__content">
-            <dt>Revenue Share</dt>
-            <dd>
-              Up to 60%
-            </dd>
-          </dl>
-          <p>lifetime revenue no hidden fees.</p>
-        </div>
-
-        <!-- Card item -->
-        <div class="highlight-card">
-          <dl class="highlight-card__content">
-            <dt>CPA</dt>
-            <dd>
-              Up to 500€
-            </dd>
-          </dl>
-          <p>lifetime revenue no hidden fees.</p>
-        </div>
-
-        <!-- Card item -->
-        <div class="highlight-card">
-          <dl class="highlight-card__content">
-            <dt>Hybrid</dt>
-            <dd>
-              €100+
-            </dd>
-            <dd>
-              40% RS
-            </dd>
-          </dl>
-          <p>lifetime revenue no hidden fees.</p>
-        </div>
-        <!-- Card item -->
-        <div class="highlight-card">
-          <dl class="highlight-card__content">
-            <dt>Sub-Affiliate</dt>
-            <dd>€100+</dd>
-            <dd>40% RS</dd>
-          </dl>
-          <p>lifetime revenue no hidden fees.</p>
-        </div>
-      </div>
+    </div>
     </div>
   </section>
 
   <!-- FAQ Section -->
-  <section class="faq">
+  <section class="faq" id="faq-section">
     <div class="wrapper">
       <div class="faq__top">
         <h2>FAQ</h2>
@@ -511,10 +524,10 @@
           <h3 id="panel1-title">
             <button class="accordion__trigger" aria-expanded="true" aria-controls="accordion1-content">
               What does ‘Affiliate Program’ mean?
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FF5029">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg"
+                viewBox="0 0 16 16">
                 <path
-                  d="M13.5 22h-3A2.5 2.5 0 0 1 8 19.5V16H4.5A2.5 2.5 0 0 1 2 13.5v-3A2.5 2.5 0 0 1 4.5 8H8V4.5A2.5 2.5 0 0 1 10.5 2h3A2.5 2.5 0 0 1 16 4.5V8h3.5a2.5 2.5 0 0 1 2.5 2.5v3a2.5 2.5 0 0 1-2.5 2.5H16v3.5a2.5 2.5 0 0 1-2.5 2.5Zm-9-12a.5.5 0 0 0-.5.5v3c0 .28.22.5.5.5H9a1 1 0 0 1 1 1v4.5c0 .28.22.5.5.5h3a.5.5 0 0 0 .5-.5V15a1 1 0 0 1 1-1h4.5a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5H15a1 1 0 0 1-1-1V4.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V9a1 1 0 0 1-1 1H4.5Z">
-                </path>
+                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
               </svg>
             </button>
           </h3>
@@ -601,35 +614,8 @@
     </div>
   </section>
 
-
-  <!-- TESTIMONIALS Section -->
-  <!-- <section class="testimonials">
-    <div class="wrapper">
-      <div class="testimonials__top">
-        <h3>Testimonials</h3>
-        <p>See what our partners have to say about us.</p>
-      </div>
-
-      <div class="testimonials__slider">
-        <div class="testimonial-card">
-          <div class="testimonial-card__content">
-            <p>
-              Silver Partners is a great affiliate program with a very professional team. We are very happy to work
-              with them and we can highly recommend them to other affiliates.
-            </p>
-          </div>
-          <div class="testimonial-card__author">
-            <img src="https://i.pravatar.cc/70" alt="Testimonial author">
-            <span>John Doe</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-
   <!-- CONTACT Section -->
-  <section class="contact">
+  <section class="contact" id="contact-section">
     <div class="wrapper">
       <div class="contact__layout">
         <div class="contact__col contact__col--left">
@@ -676,7 +662,7 @@
                 <path fill="#ff5029"
                   d="M7.066 4.76A1.665 1.665 0 0 0 4 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112zm4 0A1.665 1.665 0 0 0 8 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112z" />
               </svg>
-              <h3>Our partners say</h3>
+              <h3>What our <span>partners</span> say</h3>
             </div>
             <!-- Slider main container -->
             <div class="testimonials__carousel swiper testimonialsSwiper">
@@ -756,7 +742,41 @@
       </div>
     </div>
   </section>
-  <hr>
+
+  <!-- Upcoming Event CTA Banner -->
+  <div class="banner">
+    <div class="banner__inner">
+      <!-- Event name -->
+      <span class="badge">Upcoming Event</span>
+
+      <h3 class="banner__title">
+        Sigma Malta
+      </h3>
+      <!-- Event date -->
+      <dl class="banner__details banner__details--date">
+        <dt>When:</dt>
+        <dd>13-17 November</dd>
+      </dl>
+
+      <!-- Event location -->
+      <dl class="banner__details banner__details--location">
+        <dt>Where:</dt>
+        <dd>MMH, Malta</dd>
+      </dl>
+
+      <!-- Event CTA -->
+      <a href="#" target="_blank" class="banner__btn">
+        Book Now
+        <svg viewBox="0 0 16 16">
+          <path
+            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z" />
+          <path
+            d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5zM8 8a.5.5 0 0 1 .5.5V10H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V11H6a.5.5 0 0 1 0-1h1.5V8.5A.5.5 0 0 1 8 8" />
+        </svg>
+      </a>
+
+    </div>
+  </div>
 
   <!-- Footer Layout -->
   <footer class="footer">
@@ -786,11 +806,7 @@
             <li><a href="#">Testimonials</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
-
-
-
         </div>
-
         <div class="footer__bottom">
 
           <ul class="legal-links">
@@ -805,7 +821,7 @@
                 Linkedin
                 <svg viewBox="0 0 16 16">
                   <path
-                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169h3.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h3.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
                 </svg>
               </a>
             </li>
@@ -845,6 +861,7 @@
           </ul>
 
 
+
           <div class="copyright-text">
             <p><small>&copy; 2024 Silver Partners. All rights reserved.</small></p>
           </div>
@@ -854,6 +871,8 @@
       </nav>
     </div>
   </footer>
+
+
 
   <script type="module" src="/main.js"></script>
 </body>
